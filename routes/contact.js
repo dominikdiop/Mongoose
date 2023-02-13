@@ -1,4 +1,5 @@
 const express = require("express");
+const Contact = require("../models/Contact");
 
 const router = express.Router();
 
@@ -6,7 +7,7 @@ const router = express.Router();
 
 // test route
 router.get("/test", (req, res) => {
-  res.send("Hello sofian");
+  res.send("Hello World");
 });
 // add contact
 router.post("/add", async (req, res) => {
