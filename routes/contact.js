@@ -59,8 +59,8 @@ router.delete('/:_id', async (req, res) =>{
 
 router.put('/:_id', async (req, res) =>{
   try {
-    const {_id} = req.params
-    const result = await Contact.updateOne({_id}, { $:{ ...req.body }})
+    const {_id} = req.params;
+    const result = await Contact.updateOne({_id}, { $set: { ...req.body }})
     res.status(200).send({msg:"Contact updated..."})
   } catch (error) {
     res.status(400).send({ msg: "Can Not update the contact with this id !!!", error })
